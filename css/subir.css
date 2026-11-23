@@ -1,0 +1,31 @@
+/* ============================================================
+   BOTÓN PARA SUBIR (js/subir.js)
+   (guárdalo como css/subir.css y enlázalo en el <head>, o pega todo al FINAL de estilos-chiclin.css)
+   Queda justo ENCIMA del botón de la música.
+   ============================================================ */
+.subir-btn {
+  position: fixed;
+  right: 18px; bottom: 86px;                 /* encima del botón de música (54px + 14px de aire) */
+  z-index: 60;
+  width: 54px; height: 54px;
+  display: grid; place-items: center;
+  padding: 0;
+  border: 3px solid var(--dorado, #e0a82e);
+  border-radius: 50%;
+  background: var(--rojo, #c2571a);
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity .3s, transform .3s, visibility .3s, background .2s;
+}
+.subir-btn.visible { opacity: 1; visibility: visible; transform: none; }
+.subir-btn:hover { background: var(--vino, #7b1230); }
+.subir-btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.subir-btn svg { width: 24px; height: 24px; }
+
+@media (max-width: 520px) {
+  .subir-btn { right: 12px; bottom: 68px; width: 46px; height: 46px; border-width: 2px; }   /* encima del de música (46px) */
+  .subir-btn svg { width: 21px; height: 21px; }
+}
